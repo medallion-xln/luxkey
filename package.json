@@ -9,6 +9,7 @@
     "css": "tailwindcss -i ./src/styles/input.css -o ./public/css/styles.css --watch"
   },
   "dependencies": {
+    "@mswjs/interceptors": "^0.38.4",
     "@types/bcrypt": "^5.0.2",
     "@types/bcryptjs": "^3.0.0",
     "@types/connect-flash": "^0.0.40",
@@ -17,6 +18,7 @@
     "@types/mongoose": "^5.11.97",
     "@types/passport": "^1.0.17",
     "@types/passport-local": "^1.0.38",
+    "aws-sdk": "^2.1692.0",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^3.0.2",
     "class-variance-authority": "0.7.0",
@@ -31,13 +33,16 @@
     "express-session": "^1.18.1",
     "htmx.org": "1.9.10",
     "jsonwebtoken": "^9.0.2",
+    "mock-aws-s3": "^4.0.2",
     "mongodb": "^6.15.0",
     "mongoose": "^8.13.2",
+    "nock": "^14.0.3",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
     "shadcn-ui": "^0.9.5",
     "tailwind-merge": "2.0.0"
   },
+  "main": "dist/index.js",
   "devDependencies": {
     "@types/ejs": "3.1.5",
     "@types/express": "4.17.21",

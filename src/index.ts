@@ -99,6 +99,19 @@ app.get('/', (req, res) => {
   });
 });
 
+// Listings route
+app.get('/listings', (req, res) => {
+  res.render('layout', {
+    title: 'Luxury Listings - LuxKey',
+    body: 'listings'
+  });
+});
+
+// About route
+app.get('/about', (req, res) => {
+  res.render('layout', { title: 'About LuxKey', body: 'about' });
+});
+
 // API Routes
 app.get('/api/listings', (req, res) => {
   const search = req.query.search as string;
