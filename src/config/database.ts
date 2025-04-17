@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/luxkey', {
+    const conn = await mongoose.connect('mongodb+srv://luxkey-admin:0V9DEHRp4gABdwCX@luxkey.exfa5od.mongodb.net/?retryWrites=true&w=majority&appName=Luxkey', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     } as mongoose.ConnectOptions);
