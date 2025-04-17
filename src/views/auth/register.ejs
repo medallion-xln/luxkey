@@ -5,8 +5,7 @@
         Create your account
       </h2>
     </div>
-    <div id="register-result"></div>
-    <form class="mt-8 space-y-6" hx-post="/auth/register" hx-target="#register-result" hx-swap="innerHTML">
+    <form class="mt-8 space-y-6" hx-post="/auth/register" hx-target="#response" hx-swap="outerHTML">
       <div class="rounded-md shadow-sm -space-y-px">
         <div>
           <label for="firstName" class="sr-only">First Name</label>
@@ -37,6 +36,15 @@
           <input id="confirmPassword" name="confirmPassword" type="password" required 
                  class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
                  placeholder="Confirm Password">
+        </div>
+      </div>
+
+      <div id="response">
+        <% if (messages.error) { %>
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+          <strong class="font-bold">Error:</strong> <%= messages.error %>
+        </div>
+        <% } %>
         </div>
         <div class="error-message text-red-500 text-sm"></div>
       </div>
