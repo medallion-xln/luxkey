@@ -1,0 +1,38 @@
+<div class="min-h-screen bg-gray-100">
+  <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <div class="px-4 py-6 sm:px-0">
+      <div class="bg-white shadow rounded-lg p-6">
+        <h1 class="text-2xl font-bold text-gray-900 mb-4">Welcome, <%= user.firstName %>!</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Saved Properties -->
+          <div class="bg-indigo-50 rounded-lg p-6">
+            <h2 class="text-lg font-semibold text-indigo-900 mb-2">Saved Properties</h2>
+            <p class="text-indigo-700">View and manage your saved properties</p>
+            <a href="/dashboard/properties" class="mt-4 inline-block text-indigo-600 hover:text-indigo-900">
+              View Properties →
+            </a>
+          </div>
+
+          <!-- Messages -->
+          <div class="bg-green-50 rounded-lg p-6">
+            <h2 class="text-lg font-semibold text-green-900 mb-2">Messages</h2>
+            <p class="text-green-700">Check your messages and notifications</p>
+            <a href="/dashboard/messages" class="mt-4 inline-block text-green-600 hover:text-green-900">
+              View Messages →
+            </a>
+          </div>
+
+          <!-- Profile Settings -->
+          <div class="bg-purple-50 rounded-lg p-6">
+            <h2 class="text-lg font-semibold text-purple-900 mb-2">Profile Settings</h2>
+            <p class="text-purple-700">Update your profile information</p>
+            <a href="/dashboard/settings" class="mt-4 inline-block text-purple-600 hover:text-purple-900">
+              Edit Profile →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
