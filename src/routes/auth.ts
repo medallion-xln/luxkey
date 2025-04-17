@@ -6,8 +6,8 @@ const router = Router();
 
 // Auth routes
 router.get('/login', authController.login);
-router.post('/login', authController.loginPostHTMX);
+router.post('/login', authController.login);
 router.get('/register', authController.register);
-router.post('/register', authController.registerPostHTMX);
+router.post('/register', authController.register);
 router.get('/logout', isAuthenticated, authController.logout);
-export default router; 
+export default router;
