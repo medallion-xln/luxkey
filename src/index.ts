@@ -9,6 +9,7 @@ import MongoStore from 'connect-mongo';
 import flash from 'connect-flash';
 import authRoutes from './routes/auth';
 import dashboardRoutes from './routes/dashboard';
+import mainRoutes from './routes/main';
 import connectDB from './config/database';
 import './config/passport';
 
@@ -65,6 +66,7 @@ app.use((req, res, next) => {
 // Routes
 app.use('/auth', authRoutes);
 app.use('/dashboard', dashboardRoutes);
+app.use('/', mainRoutes);
 
 // Sample data
 const sampleListings = [
@@ -101,16 +103,26 @@ app.get('/', (req, res) => {
 
 // Listings route
 app.get('/listings', (req, res) => {
-  res.render('layout', {
-    title: 'Luxury Listings - LuxKey',
-    body: 'listings'
-  });
+  res.render('listings', { title: 'Luxury Listings - LuxKey' });
 });
 
 // About route
 app.get('/about', (req, res) => {
-  res.render('layout', { title: 'About LuxKey', body: 'about' });
+  res.render('about', { title: 'About LuxKey' });
 });
+
+// Individual Listing route
+app.get('/listings/:id', (req, res) => {
+  const listingId = parseInt(req.params.id, 10);
+  const listing = sampleListings.find(l => l.id === listingId);
+
+  if (listing) {
+    res.render('listings', { title: listing.title, listing });
+  } else {
+    res.status(404).send('Listing not found');
+  }
+});
+
 
 // API Routes
 app.get('/api/listings', (req, res) => {
